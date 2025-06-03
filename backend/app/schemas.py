@@ -1,12 +1,6 @@
-# app/schemas.py
+# backend/app/schemas.py
 from datetime import datetime
 from pydantic import BaseModel
-from typing import Optional
-
-class NoteCreate(BaseModel):
-    transcript: str
-    duration: float
-    recorded_at: datetime
 
 class NoteOut(BaseModel):
     id: int
@@ -16,7 +10,8 @@ class NoteOut(BaseModel):
     processed_at: datetime
 
     class Config:
-        orm_mode = True
+        from_attributes = True   # v2 replaces orm_mode
+        # tells Pydantic to read attributes from ORM objects
 
 class SummaryOut(BaseModel):
     id: int
@@ -26,4 +21,4 @@ class SummaryOut(BaseModel):
     content: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True

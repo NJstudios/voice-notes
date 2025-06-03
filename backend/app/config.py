@@ -1,5 +1,5 @@
-# app/config.py
-from pydantic import BaseSettings
+# backend/app/config.py
+from pydantic_settings import BaseSettings
 
 class Settings(BaseSettings):
     DATABASE_URL: str
@@ -7,6 +7,7 @@ class Settings(BaseSettings):
     SUMMARY_MODEL: str = "gpt-4"
 
     class Config:
-             _file = "../.env"
+        env_file = "../.env"           # relative to this file
+        env_file_encoding = "utf-8"
 
 settings = Settings()

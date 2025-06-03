@@ -1,4 +1,4 @@
-# app/models.py
+# backend/app/models.py
 from datetime import datetime
 from sqlalchemy import Column, Integer, Numeric, Text, DateTime
 from sqlalchemy.ext.declarative import declarative_base
