@@ -7,6 +7,6 @@ class Settings(BaseSettings):
     SUMMARY_MODEL: str = "gpt-4"
 
     class Config:
-        env_file = "../.env"
+             _file = "../.env"
 
 settings = Settings()
